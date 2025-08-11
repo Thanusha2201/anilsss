@@ -1,0 +1,480 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+<!--
+:root
+	{}
+body
+	{font-family:'Google Sans',sans-serif;
+	color:#202124}
+.flow-container
+	{max-width:1200px;
+	margin-left:auto;
+	margin-right:auto}
+.stage-title
+	{z-index:10}
+.step-card
+	{background-color:white;
+	z-index:10;
+	border-radius:0.75rem;
+	box-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+	border:1px solid #e2e8f0;
+	padding:1rem}
+.icon-container
+	{bottom:0.5rem;
+	right:0.5rem;
+	display:flex;
+	flex-direction:row;
+	z-index:15}
+.icon-wrapper
+	{}
+.icon-tooltip
+	{background-color:#202124;
+	color:#f7fafc;
+	border-radius:0.5rem;
+	padding:0.5rem 1rem;
+	width:250px;
+	bottom:100%;
+	left:50%;
+	box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+	visibility:hidden;
+	opacity:0;
+	z-index:20}
+.tooltip-link
+	{text-decoration:underline}
+.diamond-shape
+	{color:white;
+	z-index:10;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:1.5rem;
+	text-align:center;
+	font-weight:500}
+.diamond-content
+	{z-index:11}
+.diamond-content .icon-container
+	{bottom:2rem;
+	right:2rem}
+.diamond-content span
+	{display:block}
+.flowchart-grid
+	{display:grid;
+	padding:2rem}
+.line-container
+	{top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:5}
+.line
+	{}
+.loop-line
+	{}
+.arrowhead
+	{}
+.yes-label, .no-label
+	{font-weight:bold;
+	font-size:0.875rem;
+	color:#202124;
+	background-color:#e0e0e0;
+	padding:0.25rem 0.75rem;
+	border-radius:9999px;
+	z-index:10}
+.highlight
+	{}
+.scroll-target
+	{}
+.icon-bottleneck
+	{color:#DB4437}
+.icon-dependency
+	{color:#4285F4}
+.icon-collaboration
+	{color:#0F9D58}
+.icon-innovation
+	{color:#F4B400}
+.icon-tools
+	{color:#F4B400}
+.icon-tools-symbol
+	{font-size:1.25rem}
+.legend-grid
+	{display:grid;
+	align-items:center}
+.legend-icon-container
+	{display:flex;
+	justify-content:center;
+	align-items:center;
+	width:2rem;
+	height:2rem}
+-->
+</style>
+</head>
+<body class="antialiased p-8">
+<h1 class="text-3xl font-bold text-[#202124]">Instructional Designer Process Flow</h1>
+<p class="mt-2 text-md text-[#5f6368]">Hover over each icon to see detailed insights and suggestions.</p>
+<div class="flow-container flex flex-col items-center">
+<div class="w-full flex flex-col items-center space-y-6">
+<div class="stage-title bg-gray-100 py-3 px-6 rounded-lg text-lg font-bold text-gray-700 shadow-sm text-center w-full max-w-lg">
+Intake Process</div>
+<div id="step-0" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Acknowledge the project request</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-1" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Create Google chat space for the project</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM &amp; Assigned ID</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-2" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Assign ID(s) to project &amp; add them to Google chat space</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-3" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Google Meet for project kick-off</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-4" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Confirm project requirements, deliverables, learning path</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Collaboration</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-5" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Confirm timelines</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Collaboration</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-6" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Establish communication plan, strategy</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Collaboration</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-7" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Determine periodic sync</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Collaboration</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-8" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Proceed to process per deliverable type</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="h-16 w-2 bg-gray-200"></div>
+<div class="w-full flex flex-col items-center space-y-6">
+<div class="stage-title bg-gray-100 py-3 px-6 rounded-lg text-lg font-bold text-gray-700 shadow-sm text-center w-full max-w-lg">
+Stage 1 - LO/CO and Storyboarding</div>
+<div id="stage1-container" class="relative w-full max-w-5xl mx-auto flex flex-col items-center">
+<div class="flex flex-col items-center space-y-6">
+<div id="step-9" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review source materials</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-10" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Create WBS + Gantt Chart</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="flex flex-col items-center mt-12 mb-12">
+<div id="step-11" class="diamond-shape w-72 h-36 scroll-target">
+<div class="diamond-content"><span class="font-semibold">Has LO/CO been provided?</span>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="flex justify-between w-full max-w-md mt-4"><button class="yes-label px-4 py-1">
+Yes</button><button class="no-label px-4 py-1">No</button> </div>
+</div>
+<div class="flex justify-between w-full max-w-5xl">
+<div class="flex-1 flex flex-col items-center space-y-6 ml-16">
+<div id="step-22" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Create storyboard</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-23" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review storyboard, provide feedback</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Pod Lead</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-24" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Enhance storyboard</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-25" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Send storyboard to SE PgM for comments</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-26" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review, provide feedback</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center space-y-6 mr-16">
+<div id="step-13" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Create LO/CO</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-14" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review LO/CO</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Pod Lead</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-15" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Enhance LO/CO</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-16" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Submit LO/CO to SE PgM for review</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-17" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review, provide feedback</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-18" class="diamond-shape w-72 h-36 scroll-target">
+<div class="diamond-content"><span class="font-semibold">Are there change requests?</span>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="flex justify-between w-full max-w-md mt-4"><button class="yes-label px-4 py-1">
+Yes</button><button class="no-label px-4 py-1">No</button> </div>
+<div class="h-8 w-2"></div>
+<div id="step-19" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Make updates</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-20" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Ask for final approval</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2"></div>
+<div id="step-21" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Approve LO/CO</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-16 w-2 bg-gray-200"></div>
+<div class="w-full flex flex-col items-center space-y-6 mt-16">
+<div class="stage-title bg-gray-100 py-3 px-6 rounded-lg text-lg font-bold text-gray-700 shadow-sm text-center w-full max-w-lg">
+Stage 2: Development</div>
+<div id="stage2-container" class="relative w-full max-w-5xl mx-auto flex flex-col items-center">
+<div class="flex flex-col items-center space-y-6">
+<div id="step-27" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Develop training material</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-28" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Submit to Pod lead for review</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-29" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review course material</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: Pod Lead</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-30" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Enhance training material</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-31" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Submit course material to SE PgM for review</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-32" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Review, share with SME, provide feedback</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-32-decision" class="diamond-shape w-72 h-36 scroll-target">
+<div class="diamond-content"><span class="font-semibold">Are there change requests?</span>
+<div class="icon-container"></div>
+</div>
+</div>
+</div>
+<div class="flex justify-between w-full max-w-xl">
+<div class="flex-1 flex flex-col items-center space-y-6"><button class="yes-label px-4 py-1">
+Yes</button>
+<div id="step-32-yes" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Make updates</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center space-y-6"><button class="no-label px-4 py-1">
+No</button>
+<div id="step-32-no-1" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Ask for final approval</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-32-no-2" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Approve Final assessment, facilitator guide, and SG deck</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-32-no-3" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Perform ID tech check</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div id="step-32-no-4" class="step-card w-72 scroll-target"><span class="font-semibold text-lg">Share LMS path to LMS admins</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-16 w-2 bg-gray-200"></div>
+<div class="w-full flex flex-col items-center space-y-6">
+<div class="stage-title bg-gray-100 py-3 px-6 rounded-lg text-lg font-bold text-gray-700 shadow-sm text-center w-full max-w-lg">
+Stage 3: Implementation (LMS)</div>
+<div id="step-38" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Perform the tech check</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-39" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Share LMS path to LMS admins for publishing</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: ID(s)</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-40" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Update learning path</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS/IDs</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-41" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Publish to Intellum, Connect Trainings</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-42" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Conduct LMS Tech Check</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-43" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Audit the Learning Path</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-44" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Check outputs</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-45" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Make updates</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-46" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Get final approval from SE PgM</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-47" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Approve outputs</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-48" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Test the published course(s)</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-49" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Fix errors with IDs</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: LMS</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-50" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Close project</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="h-16 w-2 bg-gray-200"></div>
+<div class="w-full flex flex-col items-center space-y-6">
+<div class="stage-title bg-gray-100 py-3 px-6 rounded-lg text-lg font-bold text-gray-700 shadow-sm text-center w-full max-w-lg">
+Stage 4: Implementation (Training)</div>
+<div id="step-51" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Review all Training Materials</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-52" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Conduct Internal Mock TTT</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-53" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Provide feedback using DFM Model</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-54" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Mock TTT with the SE PgM</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-55" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Facilitate TTT Session</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-56" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Gather all resources for TTT</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-57" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">TTT Handoff with SE PgM and ID</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: SE PgM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-58" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Send End of Training Report</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: GT</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-59" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Feedback/CSAT Survey</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+<div class="h-8 w-2 bg-gray-200"></div>
+<div id="step-60" class="step-card w-full max-w-sm scroll-target"><span class="font-semibold text-lg">Close project</span>
+<p class="text-xs text-gray-500 font-medium mt-1">Owner: PM</p>
+<div class="icon-container"></div>
+</div>
+</div>
+<div class="mt-12 p-6 bg-white border border-gray-200 rounded-lg shadow-sm w-full max-w-md mx-auto">
+<h3 class="text-lg font-bold mb-4 text-center">Icon Legend</h3>
+<div class="grid grid-cols-[3rem_1fr] items-center gap-y-2 gap-x-4">
+<div class="legend-icon-container"><span class="icon-bottleneck text-xl">⚠</span>
+</div>
+<p class="text-sm">Bottlenecks/Roadblocks</p>
+<div class="legend-icon-container"><span class="icon-dependency text-lg">■</span>
+</div>
+<p class="text-sm">&quot;On-us&quot;/Google Dependency</p>
+<div class="legend-icon-container"><span class="icon-collaboration text-xl">&#128488;</span>
+</div>
+<p class="text-sm">Desired Collaboration</p>
+<div class="legend-icon-container"><span class="icon-tools icon-tools-symbol">&#128196;</span>
+</div>
+<p class="text-sm">Tools &amp; Templates</p>
+<div class="legend-icon-container"><span class="icon-innovation text-xl">&#128161;</span>
+</div>
+<p class="text-sm">Innovation/Automation</p>
+</div>
+</div>
+</div>
+</body>
+</html>
